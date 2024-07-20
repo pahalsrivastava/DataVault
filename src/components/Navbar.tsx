@@ -1,10 +1,11 @@
 import React from 'react';
 import Login from './Login';
 import Signup from './Signup';
+import { useAuth } from '../context/AuthProvider';
 
 const Navbar: React.FC = () => {
   const openLoginModal = () => {
-    const modal = document.getElementById('my_modal_3') as HTMLDialogElement;
+    const modal = document.getElementById('my_modal_login') as HTMLDialogElement;
     modal.showModal();
   };
 
@@ -12,6 +13,9 @@ const Navbar: React.FC = () => {
     const modal = document.getElementById('my_modal_signup') as HTMLDialogElement;
     modal.showModal();
   };
+
+  const [authUser,setAuthUser]=useAuth();
+  console.log(authUser)
   
   return (
     <div className="navbar bg-base-100 border border-black-300">
