@@ -15,10 +15,10 @@ const Card: React.FC<CardProps> = ({ title, description, price,  onSell }) => {
       <div className="card-body">
         <h2 className="card-title">{title}</h2>
         <p>{description}</p>
-        <p>{price}</p>
+        
   
         <div className="card-actions justify-end">
-          <button className="btn bg-green-400 hover:bg-green-600" onClick={onSell}>Sell Now</button>
+          <button className="btn bg-green-400 hover:bg-green-600" onClick={onSell}>Sell for {price}</button>
         </div>
       </div>
     </div>
