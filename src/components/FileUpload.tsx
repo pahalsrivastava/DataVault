@@ -21,7 +21,7 @@ const FileUpload: React.FC = () => {
     formData.append('file', file);
 
     try {
-      const response = await fetch('/api/upload', {
+      const response = await fetch('http://localhost:5000/api/upload', {
         method: 'POST',
         body: formData,
       });
@@ -37,13 +37,13 @@ const FileUpload: React.FC = () => {
   };
 
   return (
-    <div className="card bg-base-100 w-96 shadow-xl">
+    <div className="card bg-gray-800 text-white w-96 shadow-xl transition-transform transform hover:scale-105 hover:shadow-2xl hover:bg-sky-900">
     <div className="card-body">
     <h2 className="card-title">Upload File</h2>
     <input type="file" onChange={handleFileChange} className="border border-gray " />
 
     <div className="card-actions justify-end">
-      <button onClick={handleUpload} className="btn btn-primary">Upload</button>
+      <button onClick={handleUpload} className="bg-green-500 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-1">Upload</button>
       <p>{message}</p>
     </div>
   </div>
@@ -52,4 +52,3 @@ const FileUpload: React.FC = () => {
 };
 
 export default FileUpload;
-

@@ -44,4 +44,3 @@ const GradualSpacing: React.FC<GradualSpacingProps> = ({
 };
 
 export default GradualSpacing;
-//To trigger animations when a user scrolls to a specific section of the page, you can use the react-intersection-observer library. This library helps to detect when an element is visible in the viewport.

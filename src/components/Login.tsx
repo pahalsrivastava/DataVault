@@ -1,6 +1,8 @@
 import React, { useState,useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+
+import { Link } from 'react-router-dom';
 import toast from 'react-hot-toast';
 
 const Login: React.FC = () => {
@@ -9,8 +11,14 @@ const Login: React.FC = () => {
   const [password, setPassword] = useState('');
   const modalRef = useRef<HTMLDialogElement>(null);
 
+  const openLoginModal = () => {
+    const modal = document.getElementById('my_modal_signup') as HTMLDialogElement;
+    modal.showModal();
+  };
+  
+
   const handleLogin = async (event: React.FormEvent) => {
-    event.preventDefault(); // Prevent the default form submission behavior
+    event.preventDefault(); 
 
     const userInfo = {
       email,
@@ -18,7 +26,7 @@ const Login: React.FC = () => {
     };
 
     try {
-      const res = await axios.post("http://localhost:5000/user/login", userInfo); // Updated URL to /user/login
+      const res = await axios.post("http://localhost:5000/user/login", userInfo); 
       console.log(res.data);
       if (res.data) {
         toast.success("Login successfully");
@@ -81,7 +89,7 @@ const Login: React.FC = () => {
               >
                 Login
               </button>
-              <p>Not Registered? <span className='underline text-blue-500 cursor-pointer'>Signup</span></p>
+              <p>Not Registered? <span className='underline text-blue-500 cursor-pointer' onClick={openLoginModal}>Signup</span></p>
             </div>
           </form>
         </div>
@@ -91,5 +99,3 @@ const Login: React.FC = () => {
 };
 
 export default Login;
-
-

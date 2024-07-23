@@ -18,7 +18,7 @@ const Navbar: React.FC = () => {
   console.log(authUser)
   
   return (
-    <div className="navbar bg-base-100 border border-black-300">
+    <div className="navbar bg-black text-white">
       <div className="flex-1">
         <a href='/' className="btn btn-ghost text-xl">DataVault</a>
       </div>
@@ -36,5 +36,3 @@ const Navbar: React.FC = () => {
 };
 
 export default Navbar;
-
-

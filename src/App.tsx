@@ -10,6 +10,8 @@ import Contactus from './components/Contactus'
 
 import SelllingPage from './components/SelllingPage';
 import BuyData from './components/BuyData';
+import Help from  './components/Help'
+import BuyingPage from './components/BuyingPage';
 
 
 
@@ -22,13 +24,14 @@ const App: React.FC = () => {
       
       <Routes>
         <Route path='/' element={<Homepage />} />
-        <Route path='/login' element={authUser?<LandingPage/>:<Navigate to="/signup"/>}/>
+        <Route path='/login' element={authUser?<LandingPage/>:<Navigate to="/"/>}/>
         <Route path='/signup' element={<LandingPage/>}/>
         <Route path='/buy' element={<Login/>}/>
         <Route path='/sell/:id' element={<SelllingPage/>}/>
         <Route path='/help' element={<Contactus/>}/>
         <Route path='/buyData' element={<BuyData/>}/>
-        
+        <Route path='/reachus' element={<Help/>}/>
+        <Route path='/buying/:id' element={<BuyingPage/>}/>
 
 
       </Routes>

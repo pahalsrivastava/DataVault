@@ -3,10 +3,10 @@ import React from 'react';
 function About() {
   return (
     <div id="section2" >
-       <h2 className="text-3xl font-bold mb-6 text-center font-size-20">How It Works ?</h2>
+       <h2 className="text-3xl font-semibold mb-6 text-center font-size-20 text-white">How It Works ?</h2>
        <br/>
 
-      <ul className="timeline timeline-snap-icon max-md:timeline-compact timeline-vertical">
+      <ul className="timeline timeline-snap-icon max-md:timeline-compact timeline-vertical text-white">
         <li>
           <div className="timeline-middle">
             <svg
@@ -121,5 +121,3 @@ function About() {
 }
 
 export default About;
-
-
