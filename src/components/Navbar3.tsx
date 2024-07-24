@@ -5,7 +5,7 @@ const Navbar3: React.FC = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="navbar bg-base-100 border border-black-300">
+    <div className="navbar bg-gray-900 text-white ">
       <div className="flex-1">
         <a href='/login' className="btn btn-ghost text-xl">DataVault</a>
       </div>

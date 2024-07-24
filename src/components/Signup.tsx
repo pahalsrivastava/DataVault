@@ -42,6 +42,10 @@ const Signup: React.FC = () => {
       modalRef.current.close();
     }
   };
+  const openLoginModal = () => {
+    const modal = document.getElementById('my_modal_login') as HTMLDialogElement;
+    modal.showModal();
+  };
   
 
   return (
@@ -80,7 +84,7 @@ const Signup: React.FC = () => {
               >
                 Signup
               </button>
-              <p>Already Registered? <span className='underline text-blue-500 cursor-pointer'>Login</span></p>
+              <p>Already Registered? <span className='underline text-blue-500 cursor-pointer' onClick={openLoginModal}>Login</span></p>
             </div>
           </form>
         </div>
@@ -90,5 +94,3 @@ const Signup: React.FC = () => {
 };
 
 export default Signup;
-
-

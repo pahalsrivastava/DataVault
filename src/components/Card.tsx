@@ -26,4 +26,3 @@ const Card: React.FC<CardProps> = ({ title, description, price,  onSell }) => {
 }
 
 export default Card;
-

@@ -11,7 +11,6 @@ interface Dataset {
   title: string;
   description: string;
   price: string;
-  
 }
 
 const SellingPage: React.FC = () => {
@@ -21,7 +20,8 @@ const SellingPage: React.FC = () => {
 
   useEffect(() => {
     if (id) {
-      axios.get(`http://localhost:5000/user/dataset/${id}`)
+      axios
+        .get(`http://localhost:5000/user/dataset/${id}`)
         .then((response) => {
           setDetails(response.data);
         })
@@ -33,35 +33,31 @@ const SellingPage: React.FC = () => {
   }, [id]);
 
   if (error) {
-    return <p>{error}</p>;
+    return <p className="text-red-500">{error}</p>;
   }
 
   if (!details) {
-    return <p>Loading...</p>;
+    return <p className="text-white">Loading...</p>;
   }
 
   return (
-    <div>
+    <div className="bg-gray-900 min-h-screen text-white ">
       <Navbar3 />
-      <TypingAnimation text='Upload your Dataset Here' duration={90} className="text-black mt-20" />
-
-      <div className='mt-10 ml-20 mr-20'>
-        <div className="relative flex flex-1 border">
-          <div className="relative flex-1 p-1 text-black flex items-center">
+      <TypingAnimation text="Upload your Dataset Here" duration={90} className="text-White-400 mt-20" />
+      <div className="mt-10 ml-20 mr-20 bg-gray-800 p-6 rounded-lg shadow-lg ">
+        <div className="relative flex flex-1 border border-gray-700 rounded-lg">
+          <div className="relative flex-1 p-6 text-white flex items-center">
             <div className="ml-10 max-w-xl mx-auto">
-              <div className="card bg-base-100 w-96 shadow-xl">
+              <div className="card bg-gray-800 w-96 shadow-xl transition-transform transform hover:scale-105 hover:shadow-2xl hover:bg-sky-900">
                 <div className="card-body">
-                  <h2 className="card-title">Title: {details.title}</h2>
-                  <p>Description: {details.description}</p>
-                 
-                  <div className="card-actions justify-end">
-                    {/* Additional actions can go here */}
-                  </div>
+                  <h2 className="card-title text-white">Title: {details.title}</h2>
+                  <p className='text-white'>Description: {details.description}</p>
+                  <div className="card-actions justify-end"></div>
                 </div>
               </div>
             </div>
           </div>
-          <div className="relative flex-1 p-5 border">
+          <div className="relative flex-1 p-6 border border-gray-700 rounded-lg">
             <FileUpload />
           </div>
         </div>

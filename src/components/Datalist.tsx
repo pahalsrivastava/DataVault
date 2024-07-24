@@ -3,7 +3,7 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import Card from './Card';
 
-// Define a type for the dataset
+
 interface Dataset {
     _id: string;
     title: string;
@@ -49,4 +49,3 @@ const DataList: React.FC = () => {
 };
 
 export default DataList;
-
